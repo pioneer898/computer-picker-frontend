@@ -1,0 +1,51 @@
+<div *ngIf="isLoading" fxLayoutAlign="center center" fxFlexFill>
+  <mat-spinner></mat-spinner>
+</div>
+<mat-toolbar *ngIf="!isLoading" class="main-toolbar">
+  <span>{{configuration.clientName}}'s Build</span>
+</mat-toolbar>
+<div
+  *ngIf="!isLoading"
+  class="picker-card-container"
+  fxLayout="row"
+  fxLayoutAlign="space-around"
+  fxFlexFill
+>
+  <mat-card class="picker-card main-card">
+    <mat-card-title>
+      <div>Components</div>
+    </mat-card-title>
+    <mat-card-content
+      class="component-container"
+    >
+      <app-config-component
+        *ngFor="let c of configuration.components"
+        [configurationComponent]="c"
+      ></app-config-component>
+    </mat-card-content>
+  </mat-card>
+  <mat-card
+    class="loadout-card main-card hide-on-mobile"
+  >
+    <mat-card-title class="loadout-title">
+      <div>Current Loadout</div>
+    </mat-card-title>
+    <mat-card-content
+      class="loadout-content"
+      fxLayout="column"
+      fxLayoutAlign="space-around"
+    >
+      <div fxFlex class="option-container">
+        <app-selected-option
+          *ngFor="let sc of selectedOptions;index as sci"
+          [componentOption]="sc"
+          [configurationComponent]="configuration.components[sci]"
+        ></app-selected-option>
+      </div>
+      <div class="total-container" fxLayout="row" fxLayoutAlign="space-between center">
+        <div>Total:</div>
+        <div class="loadout-total">${{this.price}}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

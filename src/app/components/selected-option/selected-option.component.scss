@@ -1,0 +1,24 @@
+.selected-option-card{
+  padding:8px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+.configuration-component-name{
+  font-weight: bold;
+}
+.price{
+  color: var(--price-color);
+  font-weight: var(--price-font-weight);
+}
+.error-message-container{
+  margin-top: 10px;
+}
+.error-message{
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: #ffd7d7;
+  font-weight: 500;
+  margin: 2px auto;
+  padding: 0px 8px;
+}

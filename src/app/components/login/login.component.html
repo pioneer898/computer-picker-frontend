@@ -1,0 +1,18 @@
+<div class="loginCardContainer" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card class="loginCard">
+    <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="15px">
+      <span class="material-icons mainIcon">computer</span>
+      <h2>Computer Designer
+
+      </h2>
+      <form>
+        <mat-form-field>
+          <mat-label>Access Code</mat-label>
+          <input matInput type="text" [formControl]="accessCode" required>
+          <mat-error *ngIf="accessCode.hasError('required')">Requried</mat-error>
+        </mat-form-field>
+      </form>
+      <button mat-raised-button color="primary" (click)="startSession()">Enter</button>
+    </div>
+  </mat-card>
+</div>

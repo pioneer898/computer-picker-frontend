@@ -1,0 +1,36 @@
+<mat-card class="component-card">
+  <mat-card-title class="component-title">
+    {{configurationComponent.name}}
+    <mat-icon
+      *ngIf="configurationComponent.description !== ''"
+      class="more-info-icon"
+      (click)="componentInfo(configurationComponent)">info</mat-icon>
+  </mat-card-title>
+  <mat-tab-group
+    backgroundColor="primary"
+    [animationDuration]="tabAnimationMs"
+    [selectedIndex]="selectedIndex"
+  >
+    <mat-tab
+      *ngFor="let o of configurationComponent.options, let oidx = index"
+      [label]="o.name"
+    >
+      <div
+        class="tab-card"
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
+      >
+        <button mat-icon-button (click)="previousTab()" color="white" [disabled]="oidx === 0">
+          <mat-icon>navigate_before</mat-icon></button>
+        <app-component-option
+          fxFlex="grow"
+          [componentOption]="o"
+          [configurationComponent]="configurationComponent"
+        ></app-component-option>
+        <button mat-icon-button (click)="nextTab()" color="white" [disabled]="oidx === configurationComponent.options.length-1">
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

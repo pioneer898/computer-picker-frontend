@@ -1,0 +1,17 @@
+<mat-card class="selected-option-card" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex fxLayout="column">
+      <span class="configuration-component-name">{{configurationComponent.name}}</span>
+      <span class="component-option-name">{{componentOption.name}}</span>
+    </div>
+    <div class="price">
+      ${{componentOption.price}}
+    </div>
+  </div>
+  <div class="error-message-container">
+    <div
+      class="error-message"
+      *ngFor="let b of blockCodes"
+    >{{b.message}}</div>
+  </div>
+</mat-card>

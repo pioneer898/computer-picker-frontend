@@ -1,0 +1,38 @@
+<div class="component-option" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="15px">
+  <img
+    class="option-image"
+    [src]="'/images/?imageId='+componentOption.imageId"
+  >
+  <div class="info-holder" fxLayout="column" fxLayoutAlign="space-around" fxFlex>
+    <div class="price-container" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+      <h1 class="price">
+        ${{componentOption.price}}
+      </h1>
+      <a
+        *ngIf="componentOption.link"
+        [href]="componentOption.link"
+        target="_blank"
+      >
+        <button mat-mini-fab class="external-link-icon">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+      </a>
+    </div>
+    <div class="description" fxFlex [innerHTML]="componentOption.description"></div>
+    <div class="select-button">
+      <button
+        *ngIf="!componentOption.selected"
+        mat-raised-button
+        color="primary"
+        [disabled]="componentOption.selected"
+        (click)="selectComponentOption(componentOption)"
+      >Select {{priceDifference()}}</button>
+      <button
+        *ngIf="componentOption.selected"
+        mat-raised-button
+        color="primary"
+        disabled
+      >Selected</button>
+    </div>
+  </div>
+</div>

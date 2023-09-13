@@ -1,0 +1,59 @@
+.picker-card{
+  width: 70%;
+  height: 88%;
+  padding: 10px;
+}
+.main-card{
+  background-color: #ffffffe3;
+}
+.main-card mat-card-title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.loadout-card{
+  width: 25%;
+  height: 88%;
+  padding: 10px;
+}
+.picker-card-container{
+  padding-top: 20px;
+}
+.loadout-title{
+  margin-bottom: 0px;
+}
+.loadout-content{
+  height: 100%;
+  padding: 0px;
+}
+.loadout-total-container{
+  text-align: center;
+}
+.loadout-total{
+  color: var(--price-color);
+  font-weight: var(--price-font-weight);
+}
+.component-container{
+  overflow-y: scroll;
+  padding:8px 2px;
+}
+.component-container::-webkit-scrollbar{
+  display: none;
+}
+.option-container{
+  padding:8px 2px;
+  overflow-y: scroll;
+}
+.option-container::-webkit-scrollbar{
+  display: none;
+}
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .picker-card{
+    width: 98%;
+  }
+}
+.total-container{
+  margin-top: 10px;
+}
